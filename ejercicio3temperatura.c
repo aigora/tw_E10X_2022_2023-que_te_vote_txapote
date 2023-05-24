@@ -10,8 +10,8 @@ int main()
  printf ("La temperatura en grados centigrados equivale a %.2f en grados Fahrenheit\n", tempf);
 
 
-
-
+//vscn cvwefwfgeg caccacacaa
+//lajdos
 
   return 0;
 }
