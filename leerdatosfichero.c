@@ -4,7 +4,7 @@ int main()
     int i, n, num[24];
     char c[20];
     FILE *pf;
-    pf = fopen("C:/Users/annar/OneDrive/Documents/caca.csv", "r"); // Abrimos fichero para lectura
+    pf = fopen("C:/Users/annar/OneDrive/Documents/energias.csv", "r"); // Abrimos fichero para lectura
     // Leemos datos separados por comas
     n = fscanf(pf, "%[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f ",c, &num[0],
                      &num[1],&num[2],&num[3], &num[4],&num[5],&num[6],&num[7],&num[8],&num[9],&num[10],&num[11],&num[12],&num[13],
