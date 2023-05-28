@@ -245,9 +245,9 @@ int main()
 
     fclose(pf);
 
-    printf("Pulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
-    printf("Pulse la tecla 'm' para observar el número máximo que ha generado la energia hidraulica y la nuclear\n");
-    printf("Pulse la tecla 'n' para observar el número mínimo que ha generado la energia hidraulica y la nuclear\n");
+    printf("\n\n\nPulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
+    printf("\nPulse la tecla 'm' para observar el número máximo que ha generado la energia hidraulica y la nuclear\n");
+    printf("\nPulse la tecla 'n' para observar el número mínimo que ha generado la energia hidraulica y la nuclear\n");
 
     char tecla;
     scanf("%c ", &tecla);
