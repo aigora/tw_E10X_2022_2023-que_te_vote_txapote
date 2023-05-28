@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-//Prototipo de la función
 float PromedioEnergia(float energia[], int n);
-float maximo(float vector[], int numelementos);
-float minimo(float vector[], int num_elementos);
 
 
 int main()
@@ -247,24 +244,11 @@ int main()
 
 
 
-       promedio_hid = PromedioEnergia(hidraulica, 24);
-       promedio_nuc = PromedioEnergia(nuclear,24);
+        promedio_hid = PromedioEnergia(hidraulica, 24);
+        promedio_nuc = PromedioEnergia(nuclear,24);
 
-        printf("\nEl promedio de la energia hidraulica es %f\n", promedio_hid);
-        printf("El promedio de la energia nuclear es %f", promedio_nuc);
-
-
-
-
-      float resultado_maximo = maximo(hidraulica, 24);
-        printf("\nLa energia hidraulica maxima es %f", resultado_maximo);
-       float resultado_minimo = minimo(hidraulica, 24);
-        printf("La energia hidraulica minima es %f\n", resultado_minimo);
-
-       resultado_maximo = maximo(nuclear, 24);
-        printf("La energia nuclear maxima es %f\n", resultado_maximo);
-        resultado_minimo = minimo(nuclear, 24);
-        printf("La energia nuclear minima es %f\n", resultado_minimo);
+        printf("El promedio de la energia hidraulica es %f\n", promedio_hid);
+        printf("El promedio de la energia nuclear es %f\n", promedio_nuc);
 
     return(0);
 }
@@ -283,51 +267,5 @@ float PromedioEnergia(float energia[], int n)
     return resul_media;
 
 }
-
- float maximo(float vector[], int num_elementos)
-    {
-        int i;
-        float maximo_actual;
-        //Recorrer el vector
-        for(i = 0; i < num_elementos; i++)
-        {
-            if(i == 0)
-            {
-                maximo_actual = vector[0];
-            }
-            else
-            {
-                if(vector[i] > maximo_actual)
-                {
-                    maximo_actual = vector[i];
-                }
-            }
-        }
-    return maximo_actual;
-    }
-
-    float minimo(float vector[], int num_elementos)
-    {
-        int i;
-        float minimo_actual;
-        //Recorrer el vector
-        for(i = 0; i < num_elementos; i++)
-        {
-            if(i == 0)
-            {
-                minimo_actual = vector[0];
-            }
-            else
-            {
-                if(vector[i] < minimo_actual)
-                {
-                    minimo_actual = vector[i];
-                }
-            }
-        }
-    return minimo_actual;
-    }
-
-
 
 
