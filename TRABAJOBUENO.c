@@ -10,10 +10,13 @@ float diferencia_energia(float vector[], int mes_inicio, int mes_fin);
 int main()
 {
     int i, n;
+    //Crear 16 vectores (cada uno de ellos representa un tipo de energía o producción de la misma
+    //con una capacidad para 24 elementos, de los cuales los 12 primeros pertenecen a los 12 meses del año 2021 y los 12 restantes a los 12 meses del año 2022
     float hidraulica[24],turbinacion[24],nuclear[24], carbon[24],motores[24],gas[24],vapor[24],ciclocomb[24],
           hidroeol[24],eolica[24],solarfoto[24],solartermi[24],otrasren[24],congeneracion[24],residuosnoren[24],
           residuosren[24];
     char c[20];
+    //Variables auxiliares
     char aux,aux1,aux2,aux3,aux4;
    float promedio_hid, promedio_nuc, promedio_turbi_bombeo, promedio_carbon, promedio_motordie, promedio_turbi_gas, promedio_turbi_vapor, promedio_ciclo_comb, promedio_hidroeolica,promedio_eolica,
           promedio_sol_foto, promedio_sol_termi , promedio_otras_ren , promedio_congeneracion, promedio_residuos_no_ren, promedio_residuos_ren;
@@ -28,7 +31,7 @@ int main()
 
 
 
-
+    //Abrir el fichero (excel) en modo lectura
     FILE *pf;
     pf = fopen("C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado (1).csv", "r"); // Abrimos fichero para lectura //C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv
     // Leemos datos separados por comas   //C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado (1).
@@ -40,7 +43,7 @@ int main()
     }
 
 
-
+  //Programar cinco bucles de tipo 'while' para poder saltar las cinco primeras líneas del fichero
     while (aux != '\n')
     {
         fscanf(pf, "%c", &aux);
@@ -88,7 +91,7 @@ int main()
 
 
 
-
+    //Leer cada línea del fichero e ir almacenando estos datos en un vector independiente
     n = fscanf(pf, "%[^,]",c);
     for (i= 0; i< 24; i++)
     {
@@ -253,9 +256,11 @@ int main()
 
 
 
-
+    //Cerrar el fichero
     fclose(pf);
 
+    
+    //Programar el menú con las opciones
     printf("\n\n\nPulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
     printf("\nPulse la tecla 'm' para observar el numero maximo de cada tipo de energia generada\n");
     printf("\nPulse la tecla 'n' para observar el numero minimo de cada tipo de energia generada\n");
@@ -268,7 +273,7 @@ int main()
 
     switch (tecla)
     {
-    case 'p':
+    case 'p':  //Promedio de las enrgias/métodos de producción
         promedio_hid = PromedioEnergia(hidraulica, 24);
         promedio_nuc = PromedioEnergia(nuclear,24);
         promedio_turbi_bombeo = PromedioEnergia(turbinacion,24);
@@ -285,7 +290,8 @@ int main()
         promedio_congeneracion = PromedioEnergia(congeneracion,24);
         promedio_residuos_no_ren = PromedioEnergia(residuosnoren,24);
         promedio_residuos_ren = PromedioEnergia(residuosren,24);
-
+               
+            //Imprimirlo por pantalla
         printf("El promedio de la energia hidraulica es %f GWh\n", promedio_hid);
         printf("El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
         printf("El promedio de la energia creada a traves del proceso de turbinacion bombeo es %f GWh\n", promedio_turbi_bombeo);
@@ -304,7 +310,7 @@ int main()
         printf("El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
         break;
 
-    case 'm':
+    case 'm':   //Máximo de las enrgias/métodos de producción
         resultado_max_hid = maximo(hidraulica, 24);
         resultado_max_nuc = maximo(nuclear, 24);
         resultado_max_turbi = maximo(turbinacion, 24);
@@ -322,6 +328,7 @@ int main()
         resultado_max_residuosnoren = maximo(residuosnoren, 24);
         resultado_max_residuosren = maximo(residuosren, 24);
 
+           //Imprimirlo por pantalla
         printf("La energia hidraulica maxima es %f GWh\n", resultado_max_hid);
         printf("La energia nuclear maxima es %f GWh\n", resultado_max_nuc);
         printf("La energia por turbinacion bombeo maxima es %f GWh\n", resultado_max_turbi);
@@ -342,7 +349,7 @@ int main()
         break;
 
 
-    case 'n':
+    case 'n':    //Mínimo de las enrgias/métodos de producción
         resultado_min_hid = minimo(hidraulica, 24);
         resultado_min_nuc = minimo(nuclear, 24);
         resultado_min_turbi = minimo(turbinacion, 24);
@@ -360,6 +367,7 @@ int main()
         resultado_min_residuosnoren = minimo(residuosnoren, 24);
         resultado_min_residuosren = minimo(residuosren, 24);
 
+            //Imprimirlo por pantalla
         printf("La energia hidraulica minima es %f GWh\n", resultado_min_hid);
         printf("La energia nuclear minima es %f GWh\n", resultado_min_nuc);
         printf("La energia por turbinacion bombeo minima es %f GWh\n", resultado_min_turbi);
@@ -378,7 +386,7 @@ int main()
         printf("La energia por residuos renovables minima es %f GWh\n", resultado_min_residuosren);
         break;
 
-    case 'z':
+    case 'z':     //Diferencia de las enrgias/métodos de producción en 2021
         diferencia2021_hid = diferencia_energia(hidraulica, 0, 11);
         diferencia2021_nuc = diferencia_energia(nuclear, 0, 11);
         diferencia2021_turbi = diferencia_energia(turbinacion, 0, 11);
@@ -396,6 +404,7 @@ int main()
         diferencia2021_residuosnoren = diferencia_energia(residuosnoren, 0, 11);
         diferencia2021_residuosren = diferencia_energia(residuosren, 0, 11);
 
+            //Imprimirlo por pantalla
         printf("La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_hid);
         printf("La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_nuc);
         printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_turbi);
@@ -415,7 +424,7 @@ int main()
         break;
 
 
-    case 'w':
+    case 'w':    //Diferencia de las enrgias/métodos de producción en 2022
         diferencia2022_hid = diferencia_energia(hidraulica, 12, 23);
         diferencia2022_nuc = diferencia_energia(nuclear, 12, 23);
         diferencia2022_turbi = diferencia_energia(turbinacion, 12, 23);
@@ -433,6 +442,7 @@ int main()
         diferencia2022_residuosnoren = diferencia_energia(residuosnoren, 12, 23);
         diferencia2022_residuosren = diferencia_energia(residuosren, 12, 23);
 
+            //Imprimirlo por pantalla
         printf("La diferencia de energia hidraulica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_hid);
         printf("La diferencia de energia nuclear entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_nuc);
         printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_turbi);
