@@ -272,12 +272,12 @@ int main()
         promedio_ciclo_comb = PromedioEnergia(ciclocomb,24);
         promedio_hidroeolica = PromedioEnergia(hidroeol,24);
         promedio_eolica = PromedioEnergia(eolica,24);
-        float promedio_sol_foto = PromedioEnergia(solarfoto, 24);
-        float promedio_sol_termi = PromedioEnergia(solartermi,24);
-        float promedio_otras_ren = PromedioEnergia(otrasren,24);
-        float promedio_congeneracion = PromedioEnergia(congeneracion,24);
-        float promedio_residuos_no_ren = PromedioEnergia(residuosnoren,24);
-        float promedio_residuos_ren = PromedioEnergia(residuosren,24);
+        promedio_sol_foto = PromedioEnergia(solarfoto, 24);
+        promedio_sol_termi = PromedioEnergia(solartermi,24);
+        promedio_otras_ren = PromedioEnergia(otrasren,24);
+        promedio_congeneracion = PromedioEnergia(congeneracion,24);
+        promedio_residuos_no_ren = PromedioEnergia(residuosnoren,24);
+        promedio_residuos_ren = PromedioEnergia(residuosren,24);
 
         printf("El promedio de la energia hidraulica es %f GWh\n", promedio_hid);
         printf("El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
@@ -298,147 +298,151 @@ int main()
         break;
 
     case 'm':
-        resultado_maximo = maximo(hidraulica, 24);
-        printf("La energia hidraulica maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(nuclear, 24);
-        printf("La energia nuclear maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(turbinacion, 24);
-        printf("La energia por turbinacion bombeo maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(carbon, 24);
-        printf("La energia por carbon maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(motores, 24);
-        printf("La energia por motores diesel maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(gas, 24);
-        printf("La energia por turbinacion gas maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(vapor, 24);
-        printf("La energia por turbinacion vapor maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(ciclocomb, 24);
-        printf("La energia por ciclo combinado maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(hidroeol, 24);
-        printf("La energia hidroeolica maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(eolica, 24);
-        printf("La energia eolica maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(solarfoto, 24);
-        printf("La energia solar fotovoltaica maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(solartermi, 24);
-        printf("La energia solar termica maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(otrasren, 24);
-        printf("La energia por otras renovables maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(congeneracion, 24);
-        printf("La energia por congeneracion maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(residuosnoren, 24);
-        printf("La energia por residuos no renovables maxima es %f GWh\n", resultado_maximo);
-        resultado_maximo = maximo(residuosren, 24);
-        printf("La energia por residuos renovables maxima es %f GWh\n", resultado_maximo);
+        resultado_max_hid = maximo(hidraulica, 24);
+        resultado_max_nuc = maximo(nuclear, 24);
+        resultado_max_turbi = maximo(turbinacion, 24);
+        resultado_max_carbon = maximo(carbon, 24);
+        resultado_max_motores = maximo(motores, 24);
+        resultado_max_gas = maximo(gas, 24);
+        resultado_max_vapor = maximo(vapor, 24);
+        resultado_max_ciclo = maximo(ciclocomb, 24);
+        resultado_max_hidroeol = maximo(hidroeol, 24);
+        resultado_max_eolica = maximo(eolica, 24);
+        resultado_max_solarfoto = maximo(solarfoto, 24);
+        resultado_max_solartermi = maximo(solartermi, 24);
+        resultado_max_otrasren = maximo(otrasren, 24);
+        resultado_max_congeneracion = maximo(congeneracion, 24);
+        resultado_max_residuosnoren = maximo(residuosnoren, 24);
+        resultado_max_residuosren = maximo(residuosren, 24);
+
+        printf("La energia hidraulica maxima es %f GWh\n", resultado_max_hid);
+        printf("La energia nuclear maxima es %f GWh\n", resultado_max_nuc);
+        printf("La energia por turbinacion bombeo maxima es %f GWh\n", resultado_max_turbi);
+        printf("La energia por carbon maxima es %f GWh\n", resultado_max_carbon);
+        printf("La energia por motores diesel maxima es %f GWh\n", resultado_max_motores);
+        printf("La energia por turbinacion gas maxima es %f GWh\n", resultado_max_gas);
+        printf("La energia por turbinacion vapor maxima es %f GWh\n", resultado_max_vapor);
+        printf("La energia por ciclo combinado maxima es %f GWh\n", resultado_max_ciclo);
+        printf("La energia hidroeolica maxima es %f GWh\n", resultado_max_hidroeol);
+        printf("La energia eolica maxima es %f GWh\n", resultado_max_eolica);
+        printf("La energia solar fotovoltaica maxima es %f GWh\n", resultado_max_solarfoto);
+        printf("La energia solar termica maxima es %f GWh\n", resultado_max_solartermi);
+        printf("La energia por otras renovables maxima es %f GWh\n", resultado_max_otrasren);
+        printf("La energia por congeneracion maxima es %f GWh\n", resultado_max_congeneracion);
+        printf("La energia por residuos no renovables maxima es %f GWh\n", resultado_max_residuosnoren);
+        printf("La energia por residuos renovables maxima es %f GWh\n", resultado_max_residuosren);
+
         break;
 
 
     case 'n':
-        resultado_minimo = minimo(hidraulica, 24);
-        printf("La energia hidraulica minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(nuclear, 24);
-        printf("La energia nuclear minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(turbinacion, 24);
-        printf("La energia por turbinacion bombeo minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(carbon, 24);
-        printf("La energia por carbon minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(motores, 24);
-        printf("La energia por motores diesel minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(gas, 24);
-        printf("La energia por turbinacion gas minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(vapor, 24);
-        printf("La energia por turbinacion vapor minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(ciclocomb, 24);
-        printf("La energia por ciclo combinado minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(hidroeol, 24);
-        printf("La energia hidroeolica minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(eolica, 24);
-        printf("La energia eolica minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(solarfoto, 24);
-        printf("La energia solar fotovoltaica minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(solartermi, 24);
-        printf("La energia solar termica es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(otrasren, 24);
-        printf("La energia de otras renovables minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(congeneracion, 24);
-        printf("La energia por congeneracion minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(residuosnoren, 24);
-        printf("La energia por residuos no renovables minima es %f GWh\n", resultado_minimo);
-        resultado_minimo = minimo(residuosren, 24);
-        printf("La energia por residuos renovables minima es %f GWh\n", resultado_minimo);
+        resultado_min_hid = minimo(hidraulica, 24);
+        resultado_min_nuc = minimo(nuclear, 24);
+        resultado_min_turbi = minimo(turbinacion, 24);
+        resultado_min_carbon = minimo(carbon, 24);
+        resultado_min_motores = minimo(motores, 24);
+        resultado_min_gas = minimo(gas, 24);
+        resultado_min_vapor = minimo(vapor, 24);
+        resultado_min_ciclo = minimo(ciclocomb, 24);
+        resultado_min_hidroeol = minimo(hidroeol, 24);
+        resultado_min_eolica = minimo(eolica, 24);
+        resultado_min_solarfoto = minimo(solarfoto, 24);
+        resultado_min_solartermi = minimo(solartermi, 24);
+        resultado_min_otrasren = minimo(otrasren, 24);
+        resultado_min_congeneracion = minimo(congeneracion, 24);
+        resultado_min_residuosnoren = minimo(residuosnoren, 24);
+        resultado_min_residuosren = minimo(residuosren, 24);
+
+        printf("La energia hidraulica minima es %f GWh\n", resultado_min_hid);
+        printf("La energia nuclear minima es %f GWh\n", resultado_min_nuc);
+        printf("La energia por turbinacion bombeo minima es %f GWh\n", resultado_min_turbi);
+        printf("La energia por carbon minima es %f GWh\n", resultado_min_carbon);
+        printf("La energia por motores diesel minima es %f GWh\n", resultado_min_motores);
+        printf("La energia por turbinacion gas minima es %f GWh\n", resultado_min_gas);
+        printf("La energia por turbinacion vapor minima es %f GWh\n", resultado_min_vapor);
+        printf("La energia por ciclo combinado minima es %f GWh\n", resultado_min_ciclo);
+        printf("La energia hidroeolica minima es %f GWh\n", resultado_min_hidroeol);
+        printf("La energia eolica minima es %f GWh\n", resultado_min_eolica);
+        printf("La energia solar fotovoltaica minima es %f GWh\n", resultado_min_solarfoto);
+        printf("La energia solar termica es %f GWh\n", resultado_min_solartermi);
+        printf("La energia de otras renovables minima es %f GWh\n", resultado_min_otrasren);
+        printf("La energia por congeneracion minima es %f GWh\n", resultado_min_congeneracion);
+        printf("La energia por residuos no renovables minima es %f GWh\n", resultado_min_residuosnoren);
+        printf("La energia por residuos renovables minima es %f GWh\n", resultado_min_residuosren);
         break;
 
-
     case 'z':
-        diferencia2021 = diferencia_energia(hidraulica, 0, 11);
-        printf("La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(nuclear, 0, 11);
-        printf("La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(turbinacion, 0, 11);
-        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(carbon, 0, 11);
-        printf("La diferencia de energia por carbon entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(motores, 0, 11);
-        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(gas, 0, 11);
-        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(vapor, 0, 11);
-        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(ciclocomb, 0, 11);
-        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(hidroeol, 0, 11);
-        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(eolica, 0, 11);
-        printf("La diferencia de energia eolica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(solarfoto, 0, 11);
-        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(solartermi, 0, 11);
-        printf("La diferencia de energia solar termica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(otrasren, 0, 11);
-        printf("La diferencia de energia de otras renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(congeneracion, 0, 11);
-        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(residuosnoren, 0, 11);
-        printf("La diferencia de energia por reiduos no renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
-        diferencia2021 = diferencia_energia(residuosren, 0, 11);
-        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021);
+        diferencia2021_hid = diferencia_energia(hidraulica, 0, 11);
+        diferencia2021_nuc = diferencia_energia(nuclear, 0, 11);
+        diferencia2021_turbi = diferencia_energia(turbinacion, 0, 11);
+        diferencia2021_carbon = diferencia_energia(carbon, 0, 11);
+        diferencia2021_motores = diferencia_energia(motores, 0, 11);
+        diferencia2021_gas = diferencia_energia(gas, 0, 11);
+        diferencia2021_vapor = diferencia_energia(vapor, 0, 11);
+        diferencia2021_ciclo = diferencia_energia(ciclocomb, 0, 11);
+        diferencia2021_hidroeol = diferencia_energia(hidroeol, 0, 11);
+        diferencia2021_eolica = diferencia_energia(eolica, 0, 11);
+        diferencia2021_solarfoto = diferencia_energia(solarfoto, 0, 11);
+        diferencia2021_solartermi = diferencia_energia(solartermi, 0, 11);
+        diferencia2021_otrasren = diferencia_energia(otrasren, 0, 11);
+        diferencia2021_congeneracion = diferencia_energia(congeneracion, 0, 11);
+        diferencia2021_residuosnoren = diferencia_energia(residuosnoren, 0, 11);
+        diferencia2021_residuosren = diferencia_energia(residuosren, 0, 11);
+
+        printf("La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_hid);
+        printf("La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_nuc);
+        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_turbi);
+        printf("La diferencia de energia por carbon entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_carbon);
+        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_motores);
+        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_gas);
+        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_vapor);
+        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_ciclo);
+        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_hidroeol);
+        printf("La diferencia de energia eolica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_eolica);
+        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_solarfoto);
+        printf("La diferencia de energia solar termica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_solartermi);
+        printf("La diferencia de energia de otras renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_otrasren);
+        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_congeneracion);
+        printf("La diferencia de energia por reiduos no renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_residuosnoren);
+        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia2021_residuosren);
         break;
 
 
     case 'w':
-        diferencia2022 = diferencia_energia(hidraulica, 12, 23);
-        printf("La diferencia de energia hidraulica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(nuclear, 12, 23);
-        printf("La diferencia de energia nuclear entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(turbinacion, 12, 23);
-        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(carbon, 12, 23);
-        printf("La diferencia de energia por carbon entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(motores, 12, 23);
-        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(gas, 12, 23);
-        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(vapor, 12, 23);
-        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(ciclocomb, 12, 23);
-        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(hidroeol, 12, 23);
-        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(eolica, 12, 23);
-        printf("La diferencia de energia eolica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(solarfoto, 12, 23);
-        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(solartermi, 12, 23);
-        printf("La diferencia de energia solar termica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(otrasren, 12, 23);
-        printf("La diferencia de energia por otras renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(congeneracion, 12, 23);
-        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(residuosnoren, 12, 23);
-        printf("La diferencia de energia por residuos no renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        diferencia2022 = diferencia_energia(residuosren, 12, 23);
-        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022);
-        break;
+        diferencia2022_hid = diferencia_energia(hidraulica, 12, 23);
+        diferencia2022_nuc = diferencia_energia(nuclear, 12, 23);
+        diferencia2022_turbi = diferencia_energia(turbinacion, 12, 23);
+        diferencia2022_carbon = diferencia_energia(carbon, 12, 23);
+        diferencia2022_motores = diferencia_energia(motores, 12, 23);
+        diferencia2022_gas = diferencia_energia(gas, 12, 23);
+        diferencia2022_vapor = diferencia_energia(vapor, 12, 23);
+        diferencia2022_ciclo = diferencia_energia(ciclocomb, 12, 23);
+        diferencia2022_hidroeol = diferencia_energia(hidroeol, 12, 23);
+        diferencia2022_eolica = diferencia_energia(eolica, 12, 23);
+        diferencia2022_solarfoto = diferencia_energia(solarfoto, 12, 23);
+        diferencia2022_solartermi = diferencia_energia(solartermi, 12, 23);
+        diferencia2022_otrasren = diferencia_energia(otrasren, 12, 23);
+        diferencia2022_congeneracion = diferencia_energia(congeneracion, 12, 23);
+        diferencia2022_residuosnoren = diferencia_energia(residuosnoren, 12, 23);
+        diferencia2022_residuosren = diferencia_energia(residuosren, 12, 23);
+
+        printf("La diferencia de energia hidraulica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_hid);
+        printf("La diferencia de energia nuclear entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_nuc);
+        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_turbi);
+        printf("La diferencia de energia por carbon entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_carbon);
+        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_motores);
+        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_gas);
+        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_vapor);
+        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_ciclo);
+        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_hidroeol);
+        printf("La diferencia de energia eolica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_eolica);
+        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_solarfoto);
+        printf("La diferencia de energia solar termica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_solartermi);
+        printf("La diferencia de energia por otras renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_otrasren);
+        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_congeneracion);
+        printf("La diferencia de energia por residuos no renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_residuosnoren);
+        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_residuosren);
+       break;
 
 
 
@@ -449,7 +453,14 @@ int main()
     }
 
     //Almacenamos todos los resultados en un nuevo fichero llamado results
-    pf = fopen("C:/Users/annar/OneDrive/Documents/results.txt", "w");
+    pf = fopen("C:/Users/prestamo_admin/Documents/Informatica/IMPORTANTE/trabajo/dosfichero.txt", "w");
+    if (pf==NULL) //HACERLO SIEMPRE PARA VER SI ESTA TODO BIEN
+    {
+        printf("Error al abrir el archivo de lectura .\n");
+        return -1;
+    }
+
+
     fprintf(pf, "El promedio de la energia hidraulica es %f\n",promedio_hid);
     fprintf(pf, "El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
     fprintf(pf, "El promedio de la energia creada a traves del proceso de turbinacion bombeo es %f GWh\n", promedio_turbi_bombeo);
@@ -467,30 +478,43 @@ int main()
     fprintf(pf, "El promedio de la energia creada a traves de residuos renovables es %f GWh\n", promedio_residuos_ren);
     fprintf(pf, "El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
 
+    fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hid, resultado_max_hid);
+    fprintf(pf,"La energia nuclear maxima es %f GWh y la minima es %f Gwh\n", resultado_max_nuc,resultado_min_nuc);
+    fprintf(pf,"La energia por turbinacion bombeo maxima es %f GWh y la minima es %f Gwh\n", resultado_max_turbi,resultado_min_turbi);
+    fprintf(pf,"La energia por carbon maxima es %f GWh y la minima es %f Gwh\n", resultado_max_carbon,resultado_min_carbon);
+    fprintf(pf,"La energia por motores diesel maxima es %f GWh y la minima es %f Gwh\n", resultado_max_motores,resultado_min_motores);
+    fprintf(pf,"La energia por turbinacion gas maxima es %f GWh y la minima es %f Gwh\n", resultado_max_gas,resultado_min_gas);
+    fprintf(pf,"La energia por turbinacion vapor maxima es %f GWh y la minima es %f Gwh\n", resultado_max_vapor,resultado_min_vapor);
+    fprintf(pf,"La energia por ciclo combinado maxima es %f GWh y la minima es %f Gwh\n", resultado_max_ciclo,resultado_min_ciclo);
+    fprintf(pf,"La energia hidroeolica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hidroeol,resultado_min_hidroeol);
+    fprintf(pf,"La energia eolica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_eolica,resultado_min_eolica);
+    fprintf(pf,"La energia solar fotovoltaica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_solarfoto,resultado_min_solarfoto);
+    fprintf(pf,"La energia solar termica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_solartermi,resultado_min_solartermi);
+    fprintf(pf,"La energia por otras renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_max_otrasren,resultado_min_otrasren);
+    fprintf(pf,"La energia por congeneracion maxima es %f GWh y la minima es %f Gwh\n", resultado_max_congeneracion,resultado_min_congeneracion);
+    fprintf(pf,"La energia por residuos no renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_max_residuosnoren,resultado_min_residuosnoren);
+    fprintf(pf,"La energia por residuos renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_max_residuosren,resultado_min_residuosren);
 
-    fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo, resultado_minimo);
-    fprintf(pf,"La energia nuclear maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por turbinacion bombeo maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por carbon maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por motores diesel maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por turbinacion gas maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por turbinacion vapor maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por ciclo combinado maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia hidroeolica maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia eolica maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia solar fotovoltaica maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia solar termica maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por otras renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por congeneracion maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por residuos no renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
-    fprintf(pf,"La energia por residuos renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_maximo,resultado_minimo);
+    fprintf(pf,"La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_hid, diferencia2022_hid);
+    fprintf(pf,"La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_nuc, diferencia2022_nuc);
+    fprintf(pf,"La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_turbi, diferencia2022_turbi);
+    fprintf(pf,"La diferencia de energia por carbon entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_carbon, diferencia2022_carbon);
+    fprintf(pf,"La diferencia de energia por motores diesel entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_motores, diferencia2022_motores);
+    fprintf(pf,"La diferencia de energia por turbinacion gas entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_gas, diferencia2022_gas);
+    fprintf(pf,"La diferencia de energia por turbinacion vapor entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_vapor, diferencia2022_vapor);
+    fprintf(pf,"La diferencia de energia por ciclo combinado entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_ciclo, diferencia2022_ciclo);
+    fprintf(pf,"La diferencia de energia hidroeolica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_hidroeol, diferencia2022_hidroeol);
+    fprintf(pf,"La diferencia de energia eolica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_eolica, diferencia2022_eolica);
+    fprintf(pf,"La diferencia de energia solar fotovoltaica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_solarfoto, diferencia2022_solarfoto);
+    fprintf(pf,"La diferencia de energia solar termica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_solartermi, diferencia2022_solartermi);
+    fprintf(pf,"La diferencia de energia por otras renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_otrasren, diferencia2022_otrasren);
+    fprintf(pf,"La diferencia de energia por congeneracion entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_congeneracion, diferencia2022_congeneracion);
+    fprintf(pf,"La diferencia de energia por residuos no renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_residuosnoren, diferencia2022_residuosnoren);
+    fprintf(pf,"La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_residuosren, diferencia2022_residuosren);
 
 
+    //Cerramos el fichero
     fclose(pf);
-
-
-
-
 
     return(0);
 }
