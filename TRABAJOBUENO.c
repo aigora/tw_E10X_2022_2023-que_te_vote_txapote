@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//Prototipo de la función
+//Prototipo de la función 
 float PromedioEnergia(float energia[], int n); 
 float maximo(float vector[], int numelementos);
 float minimo(float vector[], int num_elementos);
