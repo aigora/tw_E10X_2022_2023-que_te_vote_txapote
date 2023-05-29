@@ -15,9 +15,16 @@ int main()
           residuosren[24];
     char c[20];
     char aux,aux1,aux2,aux3,aux4;
-    float promedio_hid, promedio_nuc, diferencia2021, diferencia2022, resultado_maximo, resultado_minimo, promedio_turbi_bombeo, promedio_carbon,
-          promedio_motordie, promedio_turbi_gas, promedio_turbi_vapor, promedio_ciclo_comb, promedio_hidroeolica,promedio_eolica,
-          promedio_sol_foto, promedio_sol_termi , promedio_otras_ren , promedio_congeneracion, promedio_residuos_no_ren, promedio_residuos_ren;
+   float promedio_hid, promedio_nuc, promedio_turbi_bombeo, promedio_carbon, promedio_motordie, promedio_turbi_gas, promedio_turbi_vapor, promedio_ciclo_comb, promedio_hidroeolica,promedio_eolica,
+          promedio_sol_foto, promedio_sol_termi , promedio_otras_ren , promedio_congeneracion, promedio_residuos_no_ren, promedio_residuos_ren,resultado_max_hid, resultado_max_nuc, resultado_max_turbi,
+          resultado_max_carbon, resultado_max_motores, resultado_max_gas, resultado_max_vapor, resultado_max_ciclo, resultado_max_hidroeol, resultado_max_eolica, resultado_max_solarfoto,
+          resultado_max_solartermi, resultado_max_otrasren, resultado_max_congeneracion, resultado_max_residuosnoren, resultado_max_residuosren, resultado_min_hid, resultado_min_nuc,
+          resultado_min_turbi, resultado_min_carbon, resultado_min_motores, resultado_min_gas, resultado_min_vapor, resultado_min_ciclo, resultado_min_hidroeol, resultado_min_eolica, resultado_min_solarfoto,
+          resultado_min_solartermi, resultado_min_otrasren, resultado_min_congeneracion, resultado_min_residuosnoren, resultado_min_residuosren, resultdo_maximo, diferencia2021_hid, diferencia2021_nuc, diferencia2021_turbi,
+          diferencia2021_carbon, diferencia2021_motores, diferencia2021_gas, diferencia2021_vapor, diferencia2021_ciclo, diferencia2021_hidroeol, diferencia2021_eolica, diferencia2021_solarfoto, diferencia2021_solartermi,
+          diferencia2021_otrasren, diferencia2021_congeneracion, diferencia2021_residuosnoren, diferencia2021_residuosren, diferencia2022_hid, diferencia2022_nuc, diferencia2022_turbi, diferencia2022_carbon,
+          diferencia2022_motores, diferencia2022_gas, diferencia2022_vapor, diferencia2022_ciclo, diferencia2022_hidroeol, diferencia2022_eolica, diferencia2022_solarfoto, diferencia2022_solartermi, diferencia2022_otrasren, diferencia2022_congeneracion,
+          diferencia2022_residuosnoren, diferencia2022_residuosren;
 
 
 
