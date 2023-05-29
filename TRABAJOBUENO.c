@@ -535,6 +535,8 @@ int main()
 
     return(0);
 }
+
+//Esta función va a permitir al programa calcular el promedio de energía creada durante el año 2021 y 2022
 float PromedioEnergia(float energia[], int n)
 {
     int i;
@@ -551,7 +553,7 @@ float PromedioEnergia(float energia[], int n)
 
 }
 
-
+//Esta función va a permitir al programa calcular el máximo de energía creada en ambos años
 float maximo(float vector[], int num_elementos)
 {
         int i;
@@ -574,7 +576,7 @@ float maximo(float vector[], int num_elementos)
     return maximo_actual;
 }
 
-
+//Esta función va a permitir al programa calcular el minimo de energía creada en ambos años
 float minimo(float vector[], int num_elementos)
 {
         int i;
@@ -597,7 +599,7 @@ float minimo(float vector[], int num_elementos)
     return minimo_actual;
     }
 
-
+//Esta función va a permitir al programa calcular la diferencia de energía entre el mes de enero y de diciembre tanto del año 2021 como del 2022
 float diferencia_energia(float vector[], int mes_inicio, int mes_fin)
 {
     float energia_inicio = vector[mes_inicio];
