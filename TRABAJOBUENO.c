@@ -273,7 +273,7 @@ int main()
 
     switch (tecla)
     {
-    case 'p':  //Promedio de las enrgias/métodos de producción
+    case 'p':  //Promedio de las energias/métodos de producción
         promedio_hid = PromedioEnergia(hidraulica, 24);
         promedio_nuc = PromedioEnergia(nuclear,24);
         promedio_turbi_bombeo = PromedioEnergia(turbinacion,24);
@@ -310,7 +310,7 @@ int main()
         printf("El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
         break;
 
-    case 'm':   //Máximo de las enrgias/métodos de producción
+    case 'm':   //Máximo de las energias/métodos de producción
         resultado_max_hid = maximo(hidraulica, 24);
         resultado_max_nuc = maximo(nuclear, 24);
         resultado_max_turbi = maximo(turbinacion, 24);
@@ -349,7 +349,7 @@ int main()
         break;
 
 
-    case 'n':    //Mínimo de las enrgias/métodos de producción
+    case 'n':    //Mínimo de las energias/métodos de producción
         resultado_min_hid = minimo(hidraulica, 24);
         resultado_min_nuc = minimo(nuclear, 24);
         resultado_min_turbi = minimo(turbinacion, 24);
@@ -386,7 +386,7 @@ int main()
         printf("La energia por residuos renovables minima es %f GWh\n", resultado_min_residuosren);
         break;
 
-    case 'z':     //Diferencia de las enrgias/métodos de producción en 2021
+    case 'z':     //Diferencia de las energias/métodos de producción en 2021
         diferencia2021_hid = diferencia_energia(hidraulica, 0, 11);
         diferencia2021_nuc = diferencia_energia(nuclear, 0, 11);
         diferencia2021_turbi = diferencia_energia(turbinacion, 0, 11);
@@ -424,7 +424,7 @@ int main()
         break;
 
 
-    case 'w':    //Diferencia de las enrgias/métodos de producción en 2022
+    case 'w':    //Diferencia de las energias/métodos de producción en 2022
         diferencia2022_hid = diferencia_energia(hidraulica, 12, 23);
         diferencia2022_nuc = diferencia_energia(nuclear, 12, 23);
         diferencia2022_turbi = diferencia_energia(turbinacion, 12, 23);
@@ -469,8 +469,8 @@ int main()
 
     }
 
-    //Almacenamos todos los resultados en un nuevo fichero llamado results en modo lectura
-    pf = fopen("C:/Users/prestamo_admin/Documents/Informatica/IMPORTANTE/trabajo/dosfichero.txt", "w");
+    //Almacenamos todos los resultados en un nuevo fichero llamado 'results' en modo lectura
+    pf = fopen("results.txt", "w");
     if (pf==NULL) //HACERLO SIEMPRE PARA VER SI ESTA TODO BIEN
     {
         printf("Error al abrir el archivo de lectura .\n");
