@@ -485,7 +485,7 @@ int main()
     fprintf(pf, "El promedio de la energia creada a traves de residuos renovables es %f GWh\n", promedio_residuos_ren);
     fprintf(pf, "El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
 
-    fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hid, resultado_max_hid);
+    fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hid, resultado_min_hid);
     fprintf(pf,"La energia nuclear maxima es %f GWh y la minima es %f Gwh\n", resultado_max_nuc,resultado_min_nuc);
     fprintf(pf,"La energia por turbinacion bombeo maxima es %f GWh y la minima es %f Gwh\n", resultado_max_turbi,resultado_min_turbi);
     fprintf(pf,"La energia por carbon maxima es %f GWh y la minima es %f Gwh\n", resultado_max_carbon,resultado_min_carbon);
