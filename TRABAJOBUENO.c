@@ -256,7 +256,7 @@ int main()
 
 
 
-    //Cerrar el fichero
+    //Cerrar el fichero de lectura
     fclose(pf);
 
     
@@ -469,15 +469,15 @@ int main()
 
     }
 
-    //Almacenamos todos los resultados en un nuevo fichero llamado results
+    //Almacenamos todos los resultados en un nuevo fichero llamado results en modo lectura
     pf = fopen("C:/Users/prestamo_admin/Documents/Informatica/IMPORTANTE/trabajo/dosfichero.txt", "w");
     if (pf==NULL) //HACERLO SIEMPRE PARA VER SI ESTA TODO BIEN
     {
         printf("Error al abrir el archivo de lectura .\n");
         return -1;
     }
-
-
+  
+    //Escribir en el nuevo fichero los resultados para el promedio
     fprintf(pf, "El promedio de la energia hidraulica es %f\n",promedio_hid);
     fprintf(pf, "El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
     fprintf(pf, "El promedio de la energia creada a traves del proceso de turbinacion bombeo es %f GWh\n", promedio_turbi_bombeo);
@@ -495,6 +495,7 @@ int main()
     fprintf(pf, "El promedio de la energia creada a traves de residuos renovables es %f GWh\n", promedio_residuos_ren);
     fprintf(pf, "El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
 
+    //Escribir en el nuevo fichero los resultados para el máximo y el mínimo
     fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hid, resultado_min_hid);
     fprintf(pf,"La energia nuclear maxima es %f GWh y la minima es %f Gwh\n", resultado_max_nuc,resultado_min_nuc);
     fprintf(pf,"La energia por turbinacion bombeo maxima es %f GWh y la minima es %f Gwh\n", resultado_max_turbi,resultado_min_turbi);
@@ -512,6 +513,7 @@ int main()
     fprintf(pf,"La energia por residuos no renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_max_residuosnoren,resultado_min_residuosnoren);
     fprintf(pf,"La energia por residuos renovables maxima es %f GWh y la minima es %f Gwh\n", resultado_max_residuosren,resultado_min_residuosren);
 
+    //Escribir en el nuevo fichero los resultados de la diferencia
     fprintf(pf,"La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_hid, diferencia2022_hid);
     fprintf(pf,"La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_nuc, diferencia2022_nuc);
     fprintf(pf,"La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_turbi, diferencia2022_turbi);
@@ -530,7 +532,7 @@ int main()
     fprintf(pf,"La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_residuosren, diferencia2022_residuosren);
 
 
-    //Cerramos el fichero
+    //Cerramos el fichero de escritura
     fclose(pf);
 
     return(0);
