@@ -247,8 +247,8 @@ int main()
     fclose(pf);
 
     printf("\n\n\nPulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
-    printf("\nPulse la tecla 'm' para observar el número máximo de cada tipo de energia generada\n");
-    printf("\nPulse la tecla 'n' para observar el número mínimo de cada tipo de energia generada\n");
+    printf("\nPulse la tecla 'm' para observar el numero maximo de cada tipo de energia generada\n");
+    printf("\nPulse la tecla 'n' para observar el numero minimo de cada tipo de energia generada\n");
     printf("\nPulse la tecla 'z' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2021\n");
     printf("\nPulse la tecla 'w' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2022\n");
 
