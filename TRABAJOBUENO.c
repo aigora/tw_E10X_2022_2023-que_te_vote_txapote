@@ -4,6 +4,7 @@
 float PromedioEnergia(float energia[], int n);
 float maximo(float vector[], int numelementos);
 float minimo(float vector[], int num_elementos);
+float diferencia_energia(float vector[], int mes_inicio, int mes_fin);
 
 
 int main()
@@ -14,7 +15,7 @@ int main()
           residuosren[24];
     char c[20];
     char aux,aux1,aux2,aux3,aux4;
-    float promedio_hid, promedio_nuc;
+    float promedio_hid, promedio_nuc, diferencia2021, diferencia2022, resultado_maximo, resultado_minimo;
 
 
 
@@ -246,12 +247,15 @@ int main()
     fclose(pf);
 
     printf("\n\n\nPulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
-    printf("\nPulse la tecla 'm' para observar el número máximo que ha generado la energia hidraulica y la nuclear\n");
-    printf("\nPulse la tecla 'n' para observar el número mínimo que ha generado la energia hidraulica y la nuclear\n");
+    printf("\nPulse la tecla 'm' para observar el número máximo de cada tipo de energia generada\n");
+    printf("\nPulse la tecla 'n' para observar el número mínimo de cada tipo de energia generada\n");
+    printf("\nPulse la tecla 'z' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2021\n");
+    printf("\nPulse la tecla 'w' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2022\n");
+
 
     char tecla;
     scanf("%c ", &tecla);
-    float resultado_maximo, resultado_minimo;
+    
     switch (tecla)
     {
     case 'p':
@@ -272,93 +276,93 @@ int main()
         float promedio_residuos_no_ren = PromedioEnergia(residuosnoren,24);
         float promedio_residuos_ren = PromedioEnergia(residuosren,24);
 
-        printf("El promedio de la energia hidraulica es %f\n", promedio_hid);
-        printf("El promedio de la energia nuclear es %f\n", promedio_nuc);
-        printf("El promedio de la energia creada a traves del proceso de turbinacion bombeo es %f\n", promedio_turbi_bombeo);
-        printf("El promedio de la energia creada a traves del carbon es %f\n", promedio_carbon);
-        printf("El promedio de la energia creada a traves del proceso de turbinacion gas es %f\n", promedio_turbi_gas);
-        printf("El promedio de la energia creada a traves del motor diesel es %f\n", promedio_motordie);
-        printf("El promedio de la energia creada a traves del proceso de turbinacion vapor es %f\n", promedio_turbi_vapor);
-        printf("El promedio de la energia creada a traves del ciclo combinado es %f\n", promedio_ciclo_comb);
-        printf("El promedio de la energia hidroeolica es %f\n", promedio_hidroeolica);
-        printf("El promedio de la energia eolica es %f\n", promedio_eolica);
-        printf("El promedio de la energia solar fotovoltaica es %f\n", promedio_sol_foto);
-        printf("El promedio de la energia solar termica es %f\n", promedio_sol_termi);
-        printf("El promedio de le energia de otras renovables es %f\n", promedio_otras_ren);
-        printf("El promedio de la energia creada a traves de la congeneracion es %f\n", promedio_congeneracion);
-        printf("El promedio de la energia creada a traves de residuos renovables es %f\n", promedio_residuos_ren);
-        printf("El promedio de la energia creada a traves de residuos no renovables es %f\n", promedio_residuos_no_ren);
+        printf("El promedio de la energia hidraulica es %f GWh\n", promedio_hid);
+        printf("El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
+        printf("El promedio de la energia creada a traves del proceso de turbinacion bombeo es %f GWh\n", promedio_turbi_bombeo);
+        printf("El promedio de la energia creada a traves del carbon es %f GWh\n", promedio_carbon);
+        printf("El promedio de la energia creada a traves del proceso de turbinacion gas es %f GWh\n", promedio_turbi_gas);
+        printf("El promedio de la energia creada a traves del motor diesel es %f GWh\n", promedio_motordie);
+        printf("El promedio de la energia creada a traves del proceso de turbinacion vapor es %f GWh\n", promedio_turbi_vapor);
+        printf("El promedio de la energia creada a traves del ciclo combinado es %f GWh\n", promedio_ciclo_comb);
+        printf("El promedio de la energia hidroeolica es %f GWh\n", promedio_hidroeolica);
+        printf("El promedio de la energia eolica es %f GWh\n", promedio_eolica);
+        printf("El promedio de la energia solar fotovoltaica es %fGWh\n", promedio_sol_foto);
+        printf("El promedio de la energia solar termica es %f GWh\n", promedio_sol_termi);
+        printf("El promedio de le energia de otras renovables es %f GWh\n", promedio_otras_ren);
+        printf("El promedio de la energia creada a traves de la congeneracion es %f GWh\n", promedio_congeneracion);
+        printf("El promedio de la energia creada a traves de residuos renovables es %f GWh\n", promedio_residuos_ren);
+        printf("El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
         break;
 
     case 'm':
         resultado_maximo = maximo(hidraulica, 24);
-        printf("La energia hidraulica maxima es %f\n", resultado_maximo);
+        printf("La energia hidraulica maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(nuclear, 24);
-        printf("La energia nuclear maxima es %f\n", resultado_maximo);
+        printf("La energia nuclear maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(turbinacion, 24);
-        printf("La energia por turbinacion bombeo maxima es %f\n", resultado_maximo);
+        printf("La energia por turbinacion bombeo maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(carbon, 24);
-        printf("La energia por carbon maxima es %f\n", resultado_maximo);
+        printf("La energia por carbon maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(motores, 24);
-        printf("La energia por motores diesel maxima es %f\n", resultado_maximo);
+        printf("La energia por motores diesel maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(gas, 24);
-        printf("La energia por turbinacion gas maxima es %f\n", resultado_maximo);
+        printf("La energia por turbinacion gas maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(vapor, 24);
-        printf("La energia por turbinacion vapor maxima es %f\n", resultado_maximo);
+        printf("La energia por turbinacion vapor maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(ciclocomb, 24);
-        printf("La energia por ciclo combinado maxima es %f\n", resultado_maximo);
+        printf("La energia por ciclo combinado maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(hidroeol, 24);
-        printf("La energia hidroeolica maxima es %f\n", resultado_maximo);
+        printf("La energia hidroeolica maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(eolica, 24);
-        printf("La energia eolica maxima es %f\n", resultado_maximo);
+        printf("La energia eolica maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(solarfoto, 24);
-        printf("La energia solar fotovoltaica maxima es %f\n", resultado_maximo);
+        printf("La energia solar fotovoltaica maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(solartermi, 24);
-        printf("La energia solar termica maxima es %f\n", resultado_maximo);
+        printf("La energia solar termica maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(otrasren, 24);
-        printf("La energia por otras renovables maxima es %f\n", resultado_maximo);
+        printf("La energia por otras renovables maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(congeneracion, 24);
-        printf("La energia por congeneracion maxima es %f\n", resultado_maximo);
+        printf("La energia por congeneracion maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(residuosnoren, 24);
-        printf("La energia por residuos no renovables maxima es %f\n", resultado_maximo);
+        printf("La energia por residuos no renovables maxima es %f GWh\n", resultado_maximo);
         resultado_maximo = maximo(residuosren, 24);
-        printf("La energia por residuos renovables maxima es %f\n", resultado_maximo);
+        printf("La energia por residuos renovables maxima es %f GWh\n", resultado_maximo);
         break;
 
 
     case 'n':
         resultado_minimo = minimo(hidraulica, 24);
-        printf("La energia hidraulica minima es %f\n", resultado_minimo);
+        printf("La energia hidraulica minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(nuclear, 24);
-        printf("La energia nuclear minima es %f\n", resultado_minimo);
+        printf("La energia nuclear minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(turbinacion, 24);
-        printf("La energia por turbinacion bombeo minima es %f\n", resultado_minimo);
+        printf("La energia por turbinacion bombeo minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(carbon, 24);
-        printf("La energia por carbon minima es %f\n", resultado_minimo);
+        printf("La energia por carbon minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(motores, 24);
-        printf("La energia por motores diesel minima es %f\n", resultado_minimo);
+        printf("La energia por motores diesel minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(gas, 24);
-        printf("La energia por turbinacion gas minima es %f\n", resultado_minimo);
+        printf("La energia por turbinacion gas minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(vapor, 24);
-        printf("La energia por turbinacion vapor minima es %f\n", resultado_minimo);
+        printf("La energia por turbinacion vapor minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(ciclocomb, 24);
-        printf("La energia por ciclo combinado minima es %f\n", resultado_minimo);
+        printf("La energia por ciclo combinado minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(hidroeol, 24);
-        printf("La energia hidroeolica minima es %f\n", resultado_minimo);
+        printf("La energia hidroeolica minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(eolica, 24);
-        printf("La energia eolica minima es %f\n", resultado_minimo);
+        printf("La energia eolica minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(solarfoto, 24);
-        printf("La energia solar fotovoltaica minima es %f\n", resultado_minimo);
+        printf("La energia solar fotovoltaica minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(solartermi, 24);
-        printf("La energia solar termica es %f\n", resultado_minimo);
+        printf("La energia solar termica es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(otrasren, 24);
-        printf("La energia de otras renovables minima es %f\n", resultado_minimo);
+        printf("La energia de otras renovables minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(congeneracion, 24);
-        printf("La energia por congeneracion minima es %f\n", resultado_minimo);
+        printf("La energia por congeneracion minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(residuosnoren, 24);
-        printf("La energia por residuos no renovables minima es %f\n", resultado_minimo);
+        printf("La energia por residuos no renovables minima es %f GWh\n", resultado_minimo);
         resultado_minimo = minimo(residuosren, 24);
-        printf("La energia por residuos renovables minima es %f\n", resultado_minimo);
+        printf("La energia por residuos renovables minima es %f GWh\n", resultado_minimo);
         break;
 
 
