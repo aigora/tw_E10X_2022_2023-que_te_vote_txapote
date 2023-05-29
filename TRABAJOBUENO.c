@@ -17,8 +17,7 @@ int main()
     char aux,aux1,aux2,aux3,aux4;
    float promedio_hid, promedio_nuc, promedio_turbi_bombeo, promedio_carbon, promedio_motordie, promedio_turbi_gas, promedio_turbi_vapor, promedio_ciclo_comb, promedio_hidroeolica,promedio_eolica,
           promedio_sol_foto, promedio_sol_termi , promedio_otras_ren , promedio_congeneracion, promedio_residuos_no_ren, promedio_residuos_ren;
-    float resultado_max_hid, resultado_max_nuc, resultado_max_turbi,
-          resultado_max_carbon, resultado_max_motores, resultado_max_gas, resultado_max_vapor, resultado_max_ciclo, resultado_max_hidroeol, resultado_max_eolica, resultado_max_solarfoto,
+    float resultado_max_hid, resultado_max_nuc, resultado_max_turbi, resultado_max_carbon, resultado_max_motores, resultado_max_gas, resultado_max_vapor, resultado_max_ciclo, resultado_max_hidroeol, resultado_max_eolica, resultado_max_solarfoto,
           resultado_max_solartermi, resultado_max_otrasren, resultado_max_congeneracion, resultado_max_residuosnoren, resultado_max_residuosren;
     float resultado_min_hid, resultado_min_nuc, resultado_min_turbi, resultado_min_carbon, resultado_min_motores, resultado_min_gas, resultado_min_vapor, resultado_min_ciclo, resultado_min_hidroeol, resultado_min_eolica, resultado_min_solarfoto,
           resultado_min_solartermi, resultado_min_otrasren, resultado_min_congeneracion, resultado_min_residuosnoren, resultado_min_residuosren;
