@@ -364,6 +364,79 @@ int main()
         resultado_minimo = minimo(residuosren, 24);
         printf("La energia por residuos renovables minima es %f GWh\n", resultado_minimo);
         break;
+            
+            
+    case 'z':
+        diferencia2021 = diferencia_energia(hidraulica, 0, 11);
+        printf("La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(nuclear, 0, 11);
+        printf("La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(turbinacion, 0, 11);
+        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(carbon, 0, 11);
+        printf("La diferencia de energia por carbon entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(motores, 0, 11);
+        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(gas, 0, 11);
+        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(vapor, 0, 11);
+        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(ciclocomb, 0, 11);
+        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(hidroeol, 0, 11);
+        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(eolica, 0, 11);
+        printf("La diferencia de energia eolica entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(solarfoto, 0, 11);
+        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(solartermi, 0, 11);
+        printf("La diferencia de energia solar termica entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(otrasren, 0, 11);
+        printf("La diferencia de energia de otras renovables entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(congeneracion, 0, 11);
+        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(residuosnoren, 0, 11);
+        printf("La diferencia de energia por reiduos no renovables entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        diferencia2021 = diferencia_energia(residuosren, 0, 11);
+        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f\n", diferencia2021);
+        break;
+
+            
+    case 'w':
+        diferencia2022 = diferencia_energia(hidraulica, 12, 23);
+        printf("La diferencia de energia hidraulica entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(nuclear, 12, 23);
+        printf("La diferencia de energia nuclear entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(turbinacion, 12, 23);
+        printf("La diferencia de energia por turbinacion bombeo entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(carbon, 12, 23);
+        printf("La diferencia de energia por carbon entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(motores, 12, 23);
+        printf("La diferencia de energia por motores diesel entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(gas, 12, 23);
+        printf("La diferencia de energia por turbinacion gas entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(vapor, 12, 23);
+        printf("La diferencia de energia por turbinacion vapor entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(ciclocomb, 12, 23);
+        printf("La diferencia de energia por ciclo combinado entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(hidroeol, 12, 23);
+        printf("La diferencia de energia hidroeolica entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(eolica, 12, 23);
+        printf("La diferencia de energia eolica entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(solarfoto, 12, 23);
+        printf("La diferencia de energia solar fotovoltaica entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(solartermi, 12, 23);
+        printf("La diferencia de energia solar termica entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(otrasren, 12, 23);
+        printf("La diferencia de energia por otras renovables entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(congeneracion, 12, 23);
+        printf("La diferencia de energia por congeneracion entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(residuosnoren, 12, 23);
+        printf("La diferencia de energia por residuos no renovables entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        diferencia2022 = diferencia_energia(residuosren, 12, 23);
+        printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2022 fue de: %.4f\n", diferencia2022);
+        break;
+
 
 
     default:
@@ -391,8 +464,9 @@ float PromedioEnergia(float energia[], int n)
 
 }
 
- float maximo(float vector[], int num_elementos)
-    {
+
+float maximo(float vector[], int num_elementos)
+{
         int i;
         float maximo_actual;
         //Recorrer el vector
@@ -411,10 +485,11 @@ float PromedioEnergia(float energia[], int n)
             }
         }
     return maximo_actual;
-    }
+}
 
-    float minimo(float vector[], int num_elementos)
-    {
+
+float minimo(float vector[], int num_elementos)
+{
         int i;
         float minimo_actual;
         //Recorrer el vector
@@ -431,10 +506,26 @@ float PromedioEnergia(float energia[], int n)
                     minimo_actual = vector[i];
                 }
             }
-        }
+}
     return minimo_actual;
     }
 
+
+float diferencia_energia(float vector[], int mes_inicio, int mes_fin)
+{
+    float energia_inicio = vector[mes_inicio];
+    float energia_fin = vector[mes_fin];
+
+    // Considerar la diferencia entre un número menor y otro mayor
+    if (energia_inicio > energia_fin)
+        {
+        return energia_inicio - energia_fin;
+        }
+        else
+            {
+        return energia_fin - energia_inicio;
+            }
+}
 
 
 
