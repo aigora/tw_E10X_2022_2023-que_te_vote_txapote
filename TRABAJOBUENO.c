@@ -1,17 +1,42 @@
 #include <stdio.h>
 
-//Prototipo de la funci√≥n 
-float PromedioEnergia(float energia[], int n); 
+//Prototipo de la funciÛn
+float PromedioEnergia(float energia[], int n);
 float maximo(float vector[], int numelementos);
 float minimo(float vector[], int num_elementos);
 float diferencia_energia(float vector[], int mes_inicio, int mes_fin);
 
+typedef struct
+{
+    char mes [100]; // En el aÒo 20221
+    float dem; // En GW/h, de la demanda total a nivel nacional de todas las energias juntas
+    float emisiones_CO2; // en tCO2 eq. las emisiones nacionales de CO2 mensualmente en el aÒo 2021
+
+}demanda;
+float max(demanda mensual[], int Mes);
+float minim(demanda mensual[], int Mes);
+float promedio(demanda mensual[], int Mes);
+
+float maxim(demanda mensual[], int Mes);
+float min(demanda mensual[], int Mes);
+float prom(demanda mensual[], int Mes);
+
 
 int main()
 {
+    int result_demanda_min;
+    int result_demanda_max;
+    float promed;
+
+    int result_emisiones_max;
+    int result_emisiones_min;
+    float prome;
+
+    demanda mensual[12] = {{"Enero",23.909,2859091 }, {"Febrero", 20.182, 1783746}, {"Marzo", 21.823, 2244987}, {"Abril",19.940, 2683142}, {"Mayo",20.347,2376488}, {"Junio",20.728, 2971569}, {"Julio", 22.922,2938935},
+                           { "Agosto", 22.060,3070670}, {"Septiembre", 20.973, 3601296}, {"Octubre", 20.197, 3400058}, {"Noviembre",21.433, 4137428} , {"Diciembre",22.030, 3840931}};
     int i, n;
-    //Crear 16 vectores (cada uno de ellos representa un tipo de energ√≠a o producci√≥n de la misma
-    //con una capacidad para 24 elementos, de los cuales los 12 primeros pertenecen a los 12 meses del a√±o 2021 y los 12 restantes a los 12 meses del a√±o 2022
+    //Crear 16 vectores (cada uno de ellos representa un tipo de energÌa o producciÛn de la misma
+    //con una capacidad para 24 elementos, de los cuales los 12 primeros pertenecen a los 12 meses del aÒo 2021 y los 12 restantes a los 12 meses del aÒo 2022
     float hidraulica[24],turbinacion[24],nuclear[24], carbon[24],motores[24],gas[24],vapor[24],ciclocomb[24],
           hidroeol[24],eolica[24],solarfoto[24],solartermi[24],otrasren[24],congeneracion[24],residuosnoren[24],
           residuosren[24];
@@ -33,7 +58,7 @@ int main()
 
     //Abrir el fichero (excel) en modo lectura
     FILE *pf;
-    pf = fopen("C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado (1).csv", "r"); // Abrimos fichero para lectura //C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv
+    pf = fopen("C:/Users/aleja/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r"); // Abrimos fichero para lectura //C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv
     // Leemos datos separados por comas   //C:/Users/annar/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado (1).
 
     if (pf==NULL) //HACERLO SIEMPRE PARA VER SI ESTA TODO BIEN
@@ -43,7 +68,7 @@ int main()
     }
 
 
-  //Programar cinco bucles de tipo 'while' para poder saltar las cinco primeras l√≠neas del fichero
+  //Programar cinco bucles de tipo 'while' para poder saltar las cinco primeras lÌneas del fichero
     while (aux != '\n')
     {
         fscanf(pf, "%c", &aux);
@@ -91,7 +116,7 @@ int main()
 
 
 
-    //Leer cada l√≠nea del fichero e ir almacenando estos datos en un vector independiente
+    //Leer cada lÌnea del fichero e ir almacenando estos datos en un vector independiente
     n = fscanf(pf, "%[^,]",c);
     for (i= 0; i< 24; i++)
     {
@@ -259,21 +284,21 @@ int main()
     //Cerrar el fichero de lectura
     fclose(pf);
 
-    
-    //Programar el men√∫ con las opciones
+
+    //Programar el men˙ con las opciones
     printf("\n\n\nPulse la tecla 'p' para realizar el promedio de todos los tipos de energias\n");
     printf("\nPulse la tecla 'm' para observar el numero maximo de cada tipo de energia generada\n");
     printf("\nPulse la tecla 'n' para observar el numero minimo de cada tipo de energia generada\n");
     printf("\nPulse la tecla 'z' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2021\n");
     printf("\nPulse la tecla 'w' para observar la diferencia entre la energia producida entre el mes de enero y de diciembre de 2022\n");
-
-
+    printf("\nPulse la tecla 't' para observar el maximo (mensual), minimo(mensual) y el promedio (anual), de la demanda total de energias en el aÒo 2021 ");
+    printf("\nPulse la tecla 'r' para observar el maximo (mensual), minimo(mensual) y el promedio (anual), de la emisiÛn de Co2  en el aÒo 2021 ");
     char tecla;
     scanf("%c ", &tecla);
 
     switch (tecla)
     {
-    case 'p':  //Promedio de las energias/m√©todos de producci√≥n
+    case 'p':  //Promedio de las enrgias/mÈtodos de producciÛn
         promedio_hid = PromedioEnergia(hidraulica, 24);
         promedio_nuc = PromedioEnergia(nuclear,24);
         promedio_turbi_bombeo = PromedioEnergia(turbinacion,24);
@@ -290,7 +315,7 @@ int main()
         promedio_congeneracion = PromedioEnergia(congeneracion,24);
         promedio_residuos_no_ren = PromedioEnergia(residuosnoren,24);
         promedio_residuos_ren = PromedioEnergia(residuosren,24);
-               
+
             //Imprimirlo por pantalla
         printf("El promedio de la energia hidraulica es %f GWh\n", promedio_hid);
         printf("El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
@@ -310,7 +335,7 @@ int main()
         printf("El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
         break;
 
-    case 'm':   //M√°ximo de las energias/m√©todos de producci√≥n
+    case 'm':   //M·ximo de las enrgias/mÈtodos de producciÛn
         resultado_max_hid = maximo(hidraulica, 24);
         resultado_max_nuc = maximo(nuclear, 24);
         resultado_max_turbi = maximo(turbinacion, 24);
@@ -349,7 +374,7 @@ int main()
         break;
 
 
-    case 'n':    //M√≠nimo de las energias/m√©todos de producci√≥n
+    case 'n':    //MÌnimo de las enrgias/mÈtodos de producciÛn
         resultado_min_hid = minimo(hidraulica, 24);
         resultado_min_nuc = minimo(nuclear, 24);
         resultado_min_turbi = minimo(turbinacion, 24);
@@ -386,7 +411,7 @@ int main()
         printf("La energia por residuos renovables minima es %f GWh\n", resultado_min_residuosren);
         break;
 
-    case 'z':     //Diferencia de las energias/m√©todos de producci√≥n en 2021
+    case 'z':     //Diferencia de las enrgias/mÈtodos de producciÛn en 2021
         diferencia2021_hid = diferencia_energia(hidraulica, 0, 11);
         diferencia2021_nuc = diferencia_energia(nuclear, 0, 11);
         diferencia2021_turbi = diferencia_energia(turbinacion, 0, 11);
@@ -424,7 +449,7 @@ int main()
         break;
 
 
-    case 'w':    //Diferencia de las energias/m√©todos de producci√≥n en 2022
+    case 'w':    //Diferencia de las enrgias/mÈtodos de producciÛn en 2022
         diferencia2022_hid = diferencia_energia(hidraulica, 12, 23);
         diferencia2022_nuc = diferencia_energia(nuclear, 12, 23);
         diferencia2022_turbi = diferencia_energia(turbinacion, 12, 23);
@@ -461,7 +486,28 @@ int main()
         printf("La diferencia de energia por residuos renovables entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia2022_residuosren);
        break;
 
+    case 't':
+        result_demanda_max=max(mensual, 12);
+    printf("El mes que mas se ha generado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
 
+    result_demanda_min= minim(mensual, 12);
+    printf("El mes que menos se ha generado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_min].mes, mensual[result_demanda_min].dem);
+
+    promed= promedio(mensual, 12);
+    printf(" El promedio de la energia demandada en 2021 es = %f:\n", promed);
+       break;
+
+    case 'r':
+
+    result_emisiones_max= maxim(mensual,12);
+    printf( "El mes que mas CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_max].mes, mensual[result_emisiones_max].emisiones_CO2);
+
+    result_emisiones_min = min(mensual, 12);
+    printf( "El mes que menos CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_min].mes, mensual[result_emisiones_min].emisiones_CO2);
+
+    prome = prom( mensual,12);
+    printf(" El promedio de la emision de Co2 en 2021 es = %f:\n", prome);
+        break;
 
     default:
         printf("Se ha equivocado de tecla");
@@ -469,14 +515,14 @@ int main()
 
     }
 
-    //Almacenamos todos los resultados en un nuevo fichero llamado 'results' en modo lectura
-    pf = fopen("results.txt", "w");
+    //Almacenamos todos los resultados en un nuevo fichero llamado results en modo lectura
+    pf = fopen("C:/Users/aleja/Downloads/Informatica.txt", "w");
     if (pf==NULL) //HACERLO SIEMPRE PARA VER SI ESTA TODO BIEN
     {
         printf("Error al abrir el archivo de lectura .\n");
         return -1;
     }
-  
+
     //Escribir en el nuevo fichero los resultados para el promedio
     fprintf(pf, "El promedio de la energia hidraulica es %f\n",promedio_hid);
     fprintf(pf, "El promedio de la energia nuclear es %f- GWh\n", promedio_nuc);
@@ -495,7 +541,7 @@ int main()
     fprintf(pf, "El promedio de la energia creada a traves de residuos renovables es %f GWh\n", promedio_residuos_ren);
     fprintf(pf, "El promedio de la energia creada a traves de residuos no renovables es %f GWh\n", promedio_residuos_no_ren);
 
-    //Escribir en el nuevo fichero los resultados para el m√°ximo y el m√≠nimo
+    //Escribir en el nuevo fichero los resultados para el m·ximo y el mÌnimo
     fprintf(pf, "La energia hidraulica maxima es %f GWh y la minima es %f Gwh\n", resultado_max_hid, resultado_min_hid);
     fprintf(pf,"La energia nuclear maxima es %f GWh y la minima es %f Gwh\n", resultado_max_nuc,resultado_min_nuc);
     fprintf(pf,"La energia por turbinacion bombeo maxima es %f GWh y la minima es %f Gwh\n", resultado_max_turbi,resultado_min_turbi);
@@ -538,7 +584,7 @@ int main()
     return(0);
 }
 
-//Esta funci√≥n va a permitir al programa calcular el promedio de energ√≠a creada durante el a√±o 2021 y 2022
+//Esta funciÛn va a permitir al programa calcular el promedio de energÌa creada durante el aÒo 2021 y 2022
 float PromedioEnergia(float energia[], int n)
 {
     int i;
@@ -555,7 +601,7 @@ float PromedioEnergia(float energia[], int n)
 
 }
 
-//Esta funci√≥n va a permitir al programa calcular el m√°ximo de energ√≠a creada en ambos a√±os
+//Esta funciÛn va a permitir al programa calcular el m·ximo de energÌa creada en ambos aÒos
 float maximo(float vector[], int num_elementos)
 {
         int i;
@@ -578,7 +624,7 @@ float maximo(float vector[], int num_elementos)
     return maximo_actual;
 }
 
-//Esta funci√≥n va a permitir al programa calcular el minimo de energ√≠a creada en ambos a√±os
+//Esta funciÛn va a permitir al programa calcular el minimo de energÌa creada en ambos aÒos
 float minimo(float vector[], int num_elementos)
 {
         int i;
@@ -600,14 +646,81 @@ float minimo(float vector[], int num_elementos)
 }
     return minimo_actual;
     }
+    float maxim(demanda mensual[], int Mes) // funcion del maximo de emisiones de Co2
+{
+    int o, iMaX= 0, v=12;
+    for(o=1; o<v; o++)
+      if(mensual[o].emisiones_CO2> mensual[iMaX].emisiones_CO2)
+    {
+        iMaX = o;
+    }
+    return iMaX;
+}
 
-//Esta funci√≥n va a permitir al programa calcular la diferencia de energ√≠a entre el mes de enero y de diciembre tanto del a√±o 2021 como del 2022
+float max(demanda mensual[], int M) // funcion del maximo de la demanda de la energia
+{
+    int i, iMax= 0, n=12;
+    for(i=1; i<n; i++)
+      if(mensual[i].dem > mensual[iMax].dem)
+    {
+        iMax = i;
+    }
+    return iMax;
+}
+
+float min(demanda mensual[], int Z) // funcion minimo de las emisiones de CO2
+{
+    int e, iMiN= 0, d=12;
+    for(e=1; e<d; e++)
+      if(mensual[e].emisiones_CO2 < mensual[iMiN].emisiones_CO2)
+    {
+        iMiN = e;
+    }
+    return iMiN;
+}
+
+float minim(demanda mensual[], int W) // funcion minimo de la demanda de energia
+{
+    int i, iMin= 0, p=12;
+    for(i=1; i<p; i++)
+      if(mensual[i].dem < mensual[iMin].dem)
+    {
+        iMin = i;
+    }
+    return iMin;
+}
+float promedio(demanda mensual[], int K)  // funcion del promedio de la demanda
+{
+    int u;
+    float suma =0.0, resultado_medio=0.0;
+    for(u=0; u<12; u++)
+    {
+        suma = suma + mensual[u].dem;
+    }
+    resultado_medio = suma/12;
+    return resultado_medio;
+}
+
+float prom(demanda mensual[], int T) //funcion del promedio de las emisiones de C02
+{
+    int a;
+    float sum =0.0, result_medio=0.0;
+    for(a=0; a<12; a++)
+    {
+        sum = sum + mensual[a].emisiones_CO2;
+    }
+    result_medio = sum/12;
+    return result_medio;
+}
+
+
+//Esta funciÛn va a permitir al programa calcular la diferencia de energÌa entre el mes de enero y de diciembre tanto del aÒo 2021 como del 2022
 float diferencia_energia(float vector[], int mes_inicio, int mes_fin)
 {
     float energia_inicio = vector[mes_inicio];
     float energia_fin = vector[mes_fin];
 
-    // Considerar la diferencia entre un n√∫mero menor y otro mayor
+    // Considerar la diferencia entre un n˙mero menor y otro mayor
     if (energia_inicio > energia_fin)
         {
         return energia_inicio - energia_fin;
@@ -617,6 +730,4 @@ float diferencia_energia(float vector[], int mes_inicio, int mes_fin)
         return energia_fin - energia_inicio;
             }
 }
-
-
 
