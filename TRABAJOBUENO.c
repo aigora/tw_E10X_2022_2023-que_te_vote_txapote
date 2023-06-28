@@ -11,17 +11,17 @@ typedef struct
 
 //Prototipo de la función
 float PromedioEnergia(float energia[], int n);
-float maximo(float vector[], int numelementos);
-float minimo(float vector[], int num_elementos);
+float maximo_energia_creada(float vector[], int numelementos);
+float minimo_energia_creada(float vector[], int num_elementos);
 float diferencia_energia(float vector[], int mes_inicio, int mes_fin);
 
-float max(demanda mensual[], int Mes);
-float minim(demanda mensual[], int Mes);
-float promedio(demanda mensual[], int Mes);
+float max_demanda(demanda mensual[], int Mes);
+float minim_demanda(demanda mensual[], int Mes);
+float promedio_demanda(demanda mensual[], int Mes);
 
-float maxim(demanda mensual[], int Mes);
-float min(demanda mensual[], int Mes);
-float prom(demanda mensual[], int Mes);
+float maxim_emsiones_Co2(demanda mensual[], int Mes);
+float min_emsiones_Co2(demanda mensual[], int Mes);
+float prom_emsiones_Co2(demanda mensual[], int Mes);
 
 
 void MostrarDatos(float hidraulica[24], float turbinacion[24], float nuclear[24], float carbon[24], float motores[24],float gas[24], float vapor[24],
@@ -113,22 +113,22 @@ int main()
         break;
 
     case 'm':   //Máximo de las enrgias/métodos de producción
-        resultado_max_hid = maximo(hid, 24);
-        resultado_max_nuc = maximo(nuc, 24);
-        resultado_max_turbi = maximo(turb, 24);
-        resultado_max_carbon = maximo(carb, 24);
-        resultado_max_motores = maximo(mot, 24);
-        resultado_max_gas = maximo(gas, 24);
-        resultado_max_vapor = maximo(vap, 24);
-        resultado_max_ciclo = maximo(ciclo, 24);
-        resultado_max_hidroeol = maximo(hidro, 24);
-        resultado_max_eolica = maximo(eol, 24);
-        resultado_max_solarfoto = maximo(solarf, 24);
-        resultado_max_solartermi = maximo(solart, 24);
-        resultado_max_otrasren = maximo(ren, 24);
-        resultado_max_congeneracion = maximo(cong, 24);
-        resultado_max_residuosnoren = maximo(resno, 24);
-        resultado_max_residuosren = maximo(resren, 24);
+        resultado_max_hid = maximo_energia_creada(hid, 24);
+        resultado_max_nuc = maximo_energia_creada(nuc, 24);
+        resultado_max_turbi = maximo_energia_creada(turb, 24);
+        resultado_max_carbon = maximo_energia_creada(carb, 24);
+        resultado_max_motores = maximo_energia_creada(mot, 24);
+        resultado_max_gas = maximo_energia_creada(gas, 24);
+        resultado_max_vapor = maximo_energia_creada(vap, 24);
+        resultado_max_ciclo = maximo_energia_creada(ciclo, 24);
+        resultado_max_hidroeol = maximo_energia_creada(hidro, 24);
+        resultado_max_eolica = maximo_energia_creada(eol, 24);
+        resultado_max_solarfoto = maximo_energia_creada(solarf, 24);
+        resultado_max_solartermi = maximo_energia_creada(solart, 24);
+        resultado_max_otrasren = maximo_energia_creada(ren, 24);
+        resultado_max_congeneracion = maximo_energia_creada(cong, 24);
+        resultado_max_residuosnoren = maximo_energia_creada(resno, 24);
+        resultado_max_residuosren = maximo_energia_creada(resren, 24);
 
            //Imprimirlo por pantalla
         printf("La energia hidraulica maxima es %f GWh\n", resultado_max_hid);
@@ -152,22 +152,22 @@ int main()
 
 
     case 'n':    //Mínimo de las enrgias/métodos de producción
-        resultado_min_hid = minimo(hid, 24);
-        resultado_min_nuc = minimo(nuc, 24);
-        resultado_min_turbi = minimo(turb, 24);
-        resultado_min_carbon = minimo(carb, 24);
-        resultado_min_motores = minimo(mot, 24);
-        resultado_min_gas = minimo(gas, 24);
-        resultado_min_vapor = minimo(vap, 24);
-        resultado_min_ciclo = minimo(ciclo, 24);
-        resultado_min_hidroeol = minimo(hidro, 24);
-        resultado_min_eolica = minimo(eol, 24);
-        resultado_min_solarfoto = minimo(solarf, 24);
-        resultado_min_solartermi = minimo(solart, 24);
-        resultado_min_otrasren = minimo(ren, 24);
-        resultado_min_congeneracion = minimo(cong, 24);
-        resultado_min_residuosnoren = minimo(resno, 24);
-        resultado_min_residuosren = minimo(resren, 24);
+        resultado_min_hid = minimo_energia_creada(hid, 24);
+        resultado_min_nuc = minimo_energia_creada(nuc, 24);
+        resultado_min_turbi = minimo_energia_creada(turb, 24);
+        resultado_min_carbon = minimo_energia_creada(carb, 24);
+        resultado_min_motores = minimo_energia_creada(mot, 24);
+        resultado_min_gas = minimo_energia_creada(gas, 24);
+        resultado_min_vapor = minimo_energia_creada(vap, 24);
+        resultado_min_ciclo = minimo_energia_creada(ciclo, 24);
+        resultado_min_hidroeol = minimo_energia_creada(hidro, 24);
+        resultado_min_eolica = minimo_energia_creada(eol, 24);
+        resultado_min_solarfoto = minimo_energia_creada(solarf, 24);
+        resultado_min_solartermi = minimo_energia_creada(solart, 24);
+        resultado_min_otrasren = minimo_energia_creada(ren, 24);
+        resultado_min_congeneracion = minimo_energia_creada(cong, 24);
+        resultado_min_residuosnoren = minimo_energia_creada(resno, 24);
+        resultado_min_residuosren = minimo_energia_creada(resren, 24);
 
             //Imprimirlo por pantalla
         printf("La energia hidraulica minima es %f GWh\n", resultado_min_hid);
@@ -264,25 +264,25 @@ int main()
        break;
 
     case 't':
-        result_demanda_max=max(mensual, 12);
-    printf("El mes que mas se ha generado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
+        result_demanda_max=max_demanda(mensual, 12);
+    printf("El mes que mas se ha demandad0 ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
 
-    result_demanda_min= minim(mensual, 12);
-    printf("El mes que menos se ha generado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_min].mes, mensual[result_demanda_min].dem);
+    result_demanda_min= minim_demanda(mensual, 12);
+    printf("El mes que menos se ha demandado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_min].mes, mensual[result_demanda_min].dem);
 
-    promed= promedio(mensual, 12);
+    promed= promedio_demanda(mensual, 12);
     printf(" El promedio de la energia demandada en 2021 es = %f:\n", promed);
        break;
 
     case 'r':
 
-    result_emisiones_max= maxim(mensual,12);
+    result_emisiones_max= maxim_emsiones_Co2(mensual,12);
     printf( "El mes que mas CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_max].mes, mensual[result_emisiones_max].emisiones_CO2);
 
-    result_emisiones_min = min(mensual, 12);
+    result_emisiones_min = min_emsiones_Co2(mensual, 12);
     printf( "El mes que menos CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_min].mes, mensual[result_emisiones_min].emisiones_CO2);
 
-    prome = prom( mensual,12);
+    prome = prom_emsiones_Co2( mensual,12);
     printf(" El promedio de la emision de Co2 en 2021 es = %f:\n", prome);
         break;
 
@@ -613,7 +613,7 @@ float PromedioEnergia(float energia[], int n)
 }
 
 //Esta función va a permitir al programa calcular el máximo de energía creada en ambos años
-float maximo(float vector[], int num_elementos)
+float maximo_energia_creada(float vector[], int num_elementos)
 {
         int i;
         float maximo_actual;
@@ -636,7 +636,7 @@ float maximo(float vector[], int num_elementos)
 }
 
 //Esta función va a permitir al programa calcular el minimo de energía creada en ambos años
-float minimo(float vector[], int num_elementos)
+float minimo_energia_creada(float vector[], int num_elementos)
 {
         int i;
         float minimo_actual;
@@ -657,7 +657,7 @@ float minimo(float vector[], int num_elementos)
 }
     return minimo_actual;
     }
-    float maxim(demanda mensual[], int Mes) // funcion del maximo de emisiones de Co2
+    float maxim_emsiones_Co2(demanda mensual[], int Mes) // funcion del maximo de emisiones de Co2
 {
     int o, iMaX= 0, v=12;
     for(o=1; o<v; o++)
@@ -668,7 +668,7 @@ float minimo(float vector[], int num_elementos)
     return iMaX;
 }
 
-float max(demanda mensual[], int M) // funcion del maximo de la demanda de la energia
+float max_demanda(demanda mensual[], int M) // funcion del maximo de la demanda de la energia
 {
     int i, iMax= 0, n=12;
     for(i=1; i<n; i++)
@@ -679,7 +679,7 @@ float max(demanda mensual[], int M) // funcion del maximo de la demanda de la en
     return iMax;
 }
 
-float min(demanda mensual[], int Z) // funcion minimo de las emisiones de CO2
+float min_emsiones_Co2(demanda mensual[], int Z) // funcion minimo de las emisiones de CO2
 {
     int e, iMiN= 0, d=12;
     for(e=1; e<d; e++)
@@ -690,7 +690,7 @@ float min(demanda mensual[], int Z) // funcion minimo de las emisiones de CO2
     return iMiN;
 }
 
-float minim(demanda mensual[], int W) // funcion minimo de la demanda de energia
+float minim_demanda(demanda mensual[], int W) // funcion minimo de la demanda de energia
 {
     int i, iMin= 0, p=12;
     for(i=1; i<p; i++)
@@ -700,7 +700,7 @@ float minim(demanda mensual[], int W) // funcion minimo de la demanda de energia
     }
     return iMin;
 }
-float promedio(demanda mensual[], int K)  // funcion del promedio de la demanda
+float promedio_demanda(demanda mensual[], int K)  // funcion del promedio de la demanda
 {
     int u;
     float suma =0.0, resultado_medio=0.0;
@@ -712,7 +712,7 @@ float promedio(demanda mensual[], int K)  // funcion del promedio de la demanda
     return resultado_medio;
 }
 
-float prom(demanda mensual[], int T) //funcion del promedio de las emisiones de C02
+float prom_emsiones_Co2(demanda mensual[], int T) //funcion del promedio de las emisiones de C02
 {
     int a;
     float sum =0.0, result_medio=0.0;
