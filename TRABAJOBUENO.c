@@ -334,7 +334,15 @@ int main()
     fprintf(pf,"La diferencia de energia por residuos no renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_residuosnoren, diferencia2022_residuosnoren);
     fprintf(pf,"La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia2021_residuosren, diferencia2022_residuosren);
 
+    // Escribir en el fichero el maximo y el minimo de la energia demandada así como el promedio de energía demandada
+    fprintf(pf,"El mes que mas se ha demandad0 ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
+    fprintf(pf,"El mes que menos se ha demandado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_min].mes, mensual[result_demanda_min].dem);
+    fprintf(pf,"El promedio de la energia demandada en 2021 es = %f:\n", promed);
 
+    // Escribir en el fichero el maximo y el minimo de las emisiones de Co2 así como el promedio de energía
+    fprintf(pf, "El mes que mas CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_max].mes, mensual[result_emisiones_max].emisiones_CO2);
+    fprintf(pf, "El mes que menos CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_min].mes, mensual[result_emisiones_min].emisiones_CO2);
+    fprintf(pf, "El promedio de la emision de Co2 en 2021 es = %f:\n", prome);
     //Cerramos el fichero de escritura
     fclose(pf);
 
