@@ -69,6 +69,7 @@ int main()
         switch(op)
         {
         case 1:
+            printf(" A continuación se mostrarán todos los resultados en un nuevo fichero");
             leerfichero(hid,turb,nuc,carb,mot,gas,vap,ciclo,hidro,eol,solarf,solart,ren,cong,resno,resren);
             break;
         case 2:
@@ -198,6 +199,7 @@ int main()
               switch(op5)
               {
               case 1:
+                  leerfichero(hid,turb,nuc,carb,mot,gas,vap,ciclo,hidro,eol,solarf,solart,ren,cong,resno,resren);
 
                   printf("La diferencia de energia hidraulica entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia_energia(hid, 0, 11));
                   printf("La diferencia de energia nuclear entre enero y diciembre de 2021 fue de: %.4f GWh\n", diferencia_energia(nuc, 0, 11));
@@ -217,6 +219,7 @@ int main()
                   break;
 
                 case 2:
+                  leerfichero(hid,turb,nuc,carb,mot,gas,vap,ciclo,hidro,eol,solarf,solart,ren,cong,resno,resren);
 
                   printf("La diferencia de energia hidraulica entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia_energia(hid, 12, 23));
                   printf("La diferencia de energia nuclear entre enero y diciembre de 2022 fue de: %.4f GWh\n", diferencia_energia(nuc, 12, 23));
