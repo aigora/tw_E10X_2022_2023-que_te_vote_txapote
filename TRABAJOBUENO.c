@@ -653,6 +653,7 @@ void resultadosenfichero()
 {
      float hid[24],nuc[24],turb[24],carb[24],mot[24],gas[24],vap[24],ciclo[24],hidro[24],eol[24],solarf[24],solart[24],
      ren[24],cong[24],resno[24],resren[24];
+     float result_demanda_max, result_demanda_min, promed, result_emisiones_max, result_emisiones_min, prome;
 
      //Almacenamos todos los resultados en un nuevo fichero llamado results en modo lectura
     FILE*pf;
@@ -720,15 +721,24 @@ void resultadosenfichero()
     fprintf(pf,"La diferencia de energia por residuos no renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia_energia(resno, 0, 11), diferencia_energia(resno, 12, 23));
     fprintf(pf,"La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia_energia(resren, 0, 11), diferencia_energia(resren, 12, 23));
 
+
+    demanda mensual[12];
+
     // Escribir en el fichero el maximo y el minimo de la energia demandada así como el promedio de energía demandada
-/*    fprintf(pf,"El mes que mas se ha demandad0 ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
+    result_demanda_max=max_demanda(mensual, 12);
+    fprintf(pf,"El mes que mas se ha demandad0 ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_max].mes, mensual[result_demanda_max].dem);
+    result_demanda_min= minim_demanda(mensual, 12);
     fprintf(pf,"El mes que menos se ha demandado ha sido %s con un total de  %f GW/h:\n", mensual[result_demanda_min].mes, mensual[result_demanda_min].dem);
+    promed= promedio_demanda(mensual, 12);
     fprintf(pf,"El promedio de la energia demandada en 2021 es = %f:\n", promed);
 
     // Escribir en el fichero el maximo y el minimo de las emisiones de Co2 así como el promedio de energía
+    result_emisiones_max= maxim_emsiones_Co2(mensual,12);
     fprintf(pf, "El mes que mas CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_max].mes, mensual[result_emisiones_max].emisiones_CO2);
+    result_emisiones_min = min_emsiones_Co2(mensual, 12);
     fprintf(pf, "El mes que menos CO2 se ha emitido ha sido %s con un total de %f tCo2 eq. :\n", mensual [result_emisiones_min].mes, mensual[result_emisiones_min].emisiones_CO2);
-    fprintf(pf, "El promedio de la emision de Co2 en 2021 es = %f:\n", prome);*/
+    prome = prom_emsiones_Co2( mensual,12);
+    fprintf(pf, "El promedio de la emision de Co2 en 2021 es = %f:\n", prome);
     //Cerramos el fichero de escritura
     fclose(pf);
 
