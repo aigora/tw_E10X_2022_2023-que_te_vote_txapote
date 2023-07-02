@@ -231,9 +231,14 @@ int main()
                   break;
 
                }
+        case 4:
+            printf( "Ha salido del menú");
 
-                default:
-                    printf("Se ha equivocado de tecla\n");
+            break;
+
+
+        default:
+        printf("Se ha equivocado de tecla\n");
 
                 }
 
@@ -653,8 +658,8 @@ void resultadosenfichero()
 {
      float hid[24],nuc[24],turb[24],carb[24],mot[24],gas[24],vap[24],ciclo[24],hidro[24],eol[24],solarf[24],solart[24],
      ren[24],cong[24],resno[24],resren[24];
-     float result_demanda_max, result_demanda_min, promed, result_emisiones_max, result_emisiones_min, prome;
-
+     int result_demanda_max, result_demanda_min, result_emisiones_max, result_emisiones_min ;
+     float prome, promed;
      //Almacenamos todos los resultados en un nuevo fichero llamado results en modo lectura
     FILE*pf;
     pf = fopen("C:/Users/annar/OneDrive/Documents/results.txt", "w");
@@ -722,7 +727,7 @@ void resultadosenfichero()
     fprintf(pf,"La diferencia de energia por residuos renovables entre enero y diciembre de 2021 fue de: %.4f GWh y de 2022 fue de: %.4f GWh\n", diferencia_energia(resren, 0, 11), diferencia_energia(resren, 12, 23));
 
 
-    demanda mensual[12];
+     demanda mensual[12] ;
 
     // Escribir en el fichero el maximo y el minimo de la energia demandada así como el promedio de energía demandada
     result_demanda_max=max_demanda(mensual, 12);
