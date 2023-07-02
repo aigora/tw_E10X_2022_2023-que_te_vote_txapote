@@ -5,7 +5,7 @@
 El proyecyo consta de un menu que permite al usuario escoger que desea saber acerca de cada tipo de energía creada la energía demandada y las emisiones de Co2 de las energías.
 
 ## Integrantes del equipo
-Alejandro Ortega
+Alejandro Ortega,
 Anna Remartinez
 
 [Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
